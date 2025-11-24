@@ -1,4 +1,4 @@
-.login-container {
+.signup-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,13 +7,13 @@
   padding: 20px;
 }
 
-.login-card {
+.signup-card {
   background: #1a1a1a;
   border-radius: 16px;
   padding: 40px;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgb(0 0 0 / 30%);
   border: 1px solid #2a2a2a;
 }
 
@@ -23,21 +23,21 @@
 }
 
 .logo {
-  color: #ffffff;
+  color: #fff;
   font-size: 28px;
   font-weight: 700;
-  margin: 0 0 8px 0;
+  margin: 0 0 8px;
   letter-spacing: -0.5px;
 }
 
 .subtitle {
-  color: #888888;
+  color: #888;
   font-size: 16px;
   margin: 0;
   font-weight: 400;
 }
 
-.login-form {
+.signup-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -50,7 +50,7 @@
 }
 
 .input-label {
-  color: #ffffff;
+  color: #fff;
   font-size: 14px;
   font-weight: 500;
   margin: 0;
@@ -61,68 +61,69 @@
   border: 1px solid #3a3a3a;
   border-radius: 8px;
   padding: 14px 16px;
-  color: #ffffff;
+  color: #fff;
   font-size: 16px;
   transition: all 0.2s ease;
   outline: none;
 }
 
 .input-field:focus {
-  border-color: #0066ff;
-  box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.2);
+  border-color: #06f;
+  box-shadow: 0 0 0 2px rgb(0 102 255 / 20%);
 }
 
 .input-field::placeholder {
-  color: #666666;
+  color: #666;
 }
 
-.form-options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.terms-section {
   margin: 8px 0;
 }
 
 .checkbox-label {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   cursor: pointer;
+  line-height: 1.4;
 }
 
 .checkbox {
   width: 16px;
   height: 16px;
-  accent-color: #0066ff;
+  margin-top: 2px;
+  accent-color: #06f;
+  flex-shrink: 0;
 }
 
 .checkbox-text {
-  color: #888888;
+  color: #888;
   font-size: 14px;
+  margin: 0;
 }
 
-.forgot-link {
+.terms-link {
   background: none;
   border: none;
-  color: #0066ff;
+  color: #06f;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: color 0.2s ease;
   padding: 0;
-  text-align: left;
+  text-decoration: underline;
 }
 
-.forgot-link:hover {
-  color: #3388ff;
+.terms-link:hover {
+  color: #38f;
 }
 
-.login-button {
-  background: linear-gradient(135deg, #0066ff 0%, #3388ff 100%);
+.signup-button {
+  background: linear-gradient(135deg, #06f 0%, #38f 100%);
   border: none;
   border-radius: 8px;
   padding: 16px;
-  color: #ffffff;
+  color: #fff;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -131,29 +132,29 @@
   outline: none;
 }
 
-.login-button:hover {
-  background: linear-gradient(135deg, #0055dd 0%, #2277dd 100%);
+.signup-button:hover {
+  background: linear-gradient(135deg, #05d 0%, #27d 100%);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+  box-shadow: 0 4px 12px rgb(0 102 255 / 30%);
 }
 
-.signup-section {
+.signin-section {
   text-align: center;
   margin-top: 24px;
   padding-top: 24px;
   border-top: 1px solid #2a2a2a;
 }
 
-.signup-text {
-  color: #888888;
+.signin-text {
+  color: #888;
   font-size: 14px;
   margin: 0;
 }
 
-.signup-link {
+.signin-link {
   background: none;
   border: none;
-  color: #0066ff;
+  color: #06f;
   font-weight: 500;
   cursor: pointer;
   transition: color 0.2s ease;
@@ -161,6 +162,6 @@
   margin-left: 4px;
 }
 
-.signup-link:hover {
-  color: #3388ff;
+.signin-link:hover {
+  color: #38f;
 }
