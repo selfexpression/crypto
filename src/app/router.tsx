@@ -1,20 +1,15 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, type RouteObject } from 'react-router-dom';
 
-import { AuthPage } from '@/pages/auth';
+import { authRoutes } from '@/pages/auth';
 
-export const router = createBrowserRouter([
+const routes: RouteObject[] = [
   {
     path: '/',
     element: <div>Hello</div>,
   },
   {
-    path: '/auth',
-    element: <AuthPage />,
-    children: [
-      {
-        path: '*',
-        element: <AuthPage />,
-      },
-    ],
+    ...authRoutes,
   },
-]);
+];
+
+export const router = createBrowserRouter(routes);
