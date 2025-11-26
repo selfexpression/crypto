@@ -76,6 +76,13 @@
   color: #666;
 }
 
+.error-message {
+  color: #ff4757;
+  font-size: 14px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
 .form-options {
   display: flex;
   justify-content: space-between;
@@ -93,7 +100,29 @@
 .checkbox {
   width: 16px;
   height: 16px;
-  accent-color: #06f;
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkbox:hover {
+  border-color: #06f;
+}
+
+.checkbox[data-state="checked"] {
+  background: #06f;
+  border-color: #06f;
+}
+
+.checkbox-indicator {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .checkbox-text {
