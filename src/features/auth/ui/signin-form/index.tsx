@@ -14,6 +14,7 @@ export default function SignInForm() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<SignInFormData>({
     resolver: zodResolver(signInSchema),
@@ -22,6 +23,7 @@ export default function SignInForm() {
   const onSubmit = async (data: SignInFormData) => {
     console.log('Sign in data:', data);
     await new Promise(resolve => setTimeout(resolve, 1000));
+    reset();
   };
 
   return (
@@ -72,7 +74,11 @@ export default function SignInForm() {
 
           <div className={styles['form-options']}>
             <div className={styles['checkbox-label']}>
-              <Checkbox className={styles['checkbox']} id="remember">
+              <Checkbox
+                className={styles['checkbox']}
+                id="remember"
+                {...register('rememberMe')}
+              >
                 <CheckboxIndicator className={styles['checkbox-indicator']}>
                   ✓
                 </CheckboxIndicator>
