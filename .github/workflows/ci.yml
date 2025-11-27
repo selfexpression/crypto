@@ -10,6 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 8
+    env:
+      VITE_DISABLE_ROLLDOWN: "true" # disable rolldown for vite build
 
     steps:
       - uses: actions/checkout@v4
