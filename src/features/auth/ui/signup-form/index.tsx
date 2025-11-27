@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import styles from './styles.module.css'
 
 export default function SignUpForm() {
   return (
@@ -77,5 +77,5 @@ export default function SignUpForm() {
         </div>
       </div>
     </div>
-  );
+  )
 }

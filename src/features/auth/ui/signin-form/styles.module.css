@@ -120,6 +120,9 @@
 }
 
 .checkbox-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   font-size: 12px;
   font-weight: bold;
