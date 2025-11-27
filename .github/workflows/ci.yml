@@ -19,8 +19,10 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies + rolldown binding
+        run: |
+          npm ci
+          npm install --no-save @rolldown/binding-linux-x64-gnu
 
       - name: Lint
         run: npm run lint
