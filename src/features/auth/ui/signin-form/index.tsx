@@ -1,14 +1,15 @@
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as Form from '@radix-ui/react-form';
-import { Checkbox, CheckboxIndicator } from '@radix-ui/react-checkbox';
-import { Label } from '@radix-ui/react-label';
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as Form from '@radix-ui/react-form'
+import { Checkbox, CheckboxIndicator } from '@radix-ui/react-checkbox'
+import { Label } from '@radix-ui/react-label'
 
+import { Icon } from '@/shared/ui'
 import {
   signInSchema,
   type SignInFormData,
-} from '@/features/auth/model/schemas';
-import styles from './styles.module.css';
+} from '@/features/auth/model/schemas'
+import styles from './styles.module.css'
 
 export default function SignInForm() {
   const {
@@ -18,13 +19,13 @@ export default function SignInForm() {
     formState: { errors, isSubmitting },
   } = useForm<SignInFormData>({
     resolver: zodResolver(signInSchema),
-  });
+  })
 
   const onSubmit = async (data: SignInFormData) => {
-    console.log('Sign in data:', data);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    reset();
-  };
+    console.log('Sign in data:', data)
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    reset()
+  }
 
   return (
     <div className={styles['login-container']}>
@@ -80,21 +81,7 @@ export default function SignInForm() {
                 {...register('rememberMe')}
               >
                 <CheckboxIndicator className={styles['checkbox-indicator']}>
-                  <svg
-                    fill="none"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    width="12"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10 3L4.5 8.5L2 6"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                    />
-                  </svg>
+                  <Icon name="checkmark" size={12} />
                 </CheckboxIndicator>
               </Checkbox>
               <Label className={styles['checkbox-text']} htmlFor="remember">
@@ -123,5 +110,5 @@ export default function SignInForm() {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -21,11 +21,11 @@ export default defineConfig([
       'package-lock.json',
       'package.json',
       'tsconfig*.json',
-      'eslint.config.js'],
+    ],
   },
   // Конфигурация для JS/TS/TSX
   {
-    files: ['**/*.{js,ts,tsx}'],
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
@@ -37,6 +37,11 @@ export default defineConfig([
       parserOptions: {
         project: ['./tsconfig.json', './tsconfig.app.json', './tsconfig.node.json'],
         tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    settings: {
+      react: {
+        version: 'detect',
       },
     },
     plugins: {
@@ -54,6 +59,7 @@ export default defineConfig([
       'prettier/prettier': [
         'error',
         {
+          semi: false,
           singleQuote: true,
           useTabs: false,
           tabWidth: 2,

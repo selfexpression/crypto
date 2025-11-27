@@ -1,6 +1,6 @@
-import type { RouteObject } from 'react-router-dom';
+import type { RouteObject } from 'react-router-dom'
 
-import { AuthPage } from '.';
+import { AuthPage } from '.'
 
 export const authRoutes: RouteObject = {
   path: '/auth',
@@ -11,4 +11,4 @@ export const authRoutes: RouteObject = {
       element: <AuthPage />,
     },
   ],
-};
+}

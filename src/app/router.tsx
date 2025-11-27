@@ -1,6 +1,6 @@
-import { createBrowserRouter, type RouteObject } from 'react-router-dom';
+import { createBrowserRouter, type RouteObject } from 'react-router-dom'
 
-import { authRoutes } from '@/pages/auth';
+import { authRoutes } from '@/pages/auth'
 
 const routes: RouteObject[] = [
   {
@@ -10,6 +10,6 @@ const routes: RouteObject[] = [
   {
     ...authRoutes,
   },
-];
+]
 
-export const router = createBrowserRouter(routes);
+export const router = createBrowserRouter(routes)
