@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 8
 
     steps:
       - uses: actions/checkout@v4
@@ -19,9 +19,13 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies + rolldown binding
+      - name: Install dependencies (clean)
         run: |
-          npm ci
+          rm -rf node_modules package-lock.json
+          npm install --force
+
+      - name: Force install Rolldown binding (after everything)
+        run: |
           npm install --no-save @rolldown/binding-linux-x64-gnu
 
       - name: Lint
