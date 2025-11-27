@@ -80,7 +80,21 @@ export default function SignInForm() {
                 {...register('rememberMe')}
               >
                 <CheckboxIndicator className={styles['checkbox-indicator']}>
-                  ✓
+                  <svg
+                    fill="none"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    width="12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 3L4.5 8.5L2 6"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                    />
+                  </svg>
                 </CheckboxIndicator>
               </Checkbox>
               <Label className={styles['checkbox-text']} htmlFor="remember">
