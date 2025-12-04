@@ -9,9 +9,9 @@ import {
   type SignInFormData,
 } from '@/features/auth/model/schemas'
 import { SIGNIN_FORM_FIELDS } from '@/features/auth/model/constants'
-import AuthLayout from '../auth-layout'
-import AuthToggleLink from '../auth-toggle-link'
-import AuthButton from '../auth-button'
+import AuthLayout from '../../base/auth-layout'
+import AuthToggleLink from '../../base/auth-toggle-link'
+import AuthButton from '../../base/auth-button'
 import styles from './styles.module.css'
 
 export default function SignInForm() {

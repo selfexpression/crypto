@@ -1,2 +1,2 @@
-export { default as AuthForm } from './ui/auth-form'
+export { default as AuthFlow } from './ui/auth-flow'
 export { getAuthRoute } from './model/lib'

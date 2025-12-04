@@ -1,12 +1,12 @@
-import SignInForm from '../signin-form'
-import SignUpForm from '../signup-form'
+import SignInForm from '../forms/signin'
+import SignUpForm from '../forms/signup'
 import { AuthPageRoutes } from '@/features/auth/model/types'
 
-interface IAuthForm {
+interface IAuthFlow {
   route: AuthPageRoutes
 }
 
-export default function AuthForm({ route }: IAuthForm) {
+export default function AuthFlow({ route }: IAuthFlow) {
   switch (route) {
     case AuthPageRoutes.SIGN_IN:
       return <SignInForm />
