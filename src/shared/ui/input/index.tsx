@@ -1,6 +1,6 @@
-import * as Form from '@radix-ui/react-form'
 import { forwardRef } from 'react'
 
+import { FormField } from '@/shared/ui'
 import { classNames } from '@/shared/lib'
 import styles from './styles.module.css'
 
@@ -19,28 +19,21 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
     ref
   ) => {
     return (
-      <Form.Field
+      <FormField
         className={classNames(styles['input-group'], className)}
+        error={error}
         name={name}
       >
-        {label && (
-          <Form.Label className={styles['input-label']}>{label}</Form.Label>
-        )}
-        <Form.Control asChild>
-          <input
-            {...restProps}
-            className={styles['input-field']}
-            placeholder={placeholder}
-            ref={ref}
-            type={type}
-          />
-        </Form.Control>
-        {error && (
-          <Form.Message className={styles['error-message']}>
-            {error}
-          </Form.Message>
-        )}
-      </Form.Field>
+        {label && <label className={styles['input-label']}>{label}</label>}
+        <input
+          {...restProps}
+          className={styles['input-field']}
+          name={name}
+          placeholder={placeholder}
+          ref={ref}
+          type={type}
+        />
+      </FormField>
     )
   }
 )
