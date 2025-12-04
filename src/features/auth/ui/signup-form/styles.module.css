@@ -1,79 +1,7 @@
-.signup-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-  padding: 20px;
-}
-
-.signup-card {
-  background: #1a1a1a;
-  border-radius: 16px;
-  padding: 40px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 20px 40px rgb(0 0 0 / 30%);
-  border: 1px solid #2a2a2a;
-}
-
-.logo-section {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.logo {
-  color: #fff;
-  font-size: 28px;
-  font-weight: 700;
-  margin: 0 0 8px;
-  letter-spacing: -0.5px;
-}
-
-.subtitle {
-  color: #888;
-  font-size: 16px;
-  margin: 0;
-  font-weight: 400;
-}
-
 .signup-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.input-label {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0;
-}
-
-.input-field {
-  background: #2a2a2a;
-  border: 1px solid #3a3a3a;
-  border-radius: 8px;
-  padding: 14px 16px;
-  color: #fff;
-  font-size: 16px;
-  transition: all 0.2s ease;
-  outline: none;
-}
-
-.input-field:focus {
-  border-color: #06f;
-  box-shadow: 0 0 0 2px rgb(0 102 255 / 20%);
-}
-
-.input-field::placeholder {
-  color: #666;
 }
 
 .terms-section {
@@ -115,54 +43,6 @@
 }
 
 .terms-link:hover {
-  color: #38f;
-}
-
-.signup-button {
-  background: linear-gradient(135deg, #06f 0%, #38f 100%);
-  border: none;
-  border-radius: 8px;
-  padding: 16px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-top: 8px;
-  outline: none;
-}
-
-.signup-button:hover {
-  background: linear-gradient(135deg, #05d 0%, #27d 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgb(0 102 255 / 30%);
-}
-
-.signin-section {
-  text-align: center;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid #2a2a2a;
-}
-
-.signin-text {
-  color: #888;
-  font-size: 14px;
-  margin: 0;
-}
-
-.signin-link {
-  background: none;
-  border: none;
-  color: #06f;
-  font-weight: 500;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  padding: 0;
-  margin-left: 4px;
-}
-
-.signin-link:hover {
   color: #38f;
 }
 

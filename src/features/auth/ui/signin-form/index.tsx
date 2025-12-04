@@ -1,14 +1,17 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as Form from '@radix-ui/react-form'
-import { Checkbox, CheckboxIndicator } from '@radix-ui/react-checkbox'
-import { Label } from '@radix-ui/react-label'
 
-import { Icon } from '@/shared/ui'
+import Button from '@/shared/ui/button'
+import { Input, Checkbox, FormField } from '@/shared/ui'
 import {
   signInSchema,
   type SignInFormData,
 } from '@/features/auth/model/schemas'
+import { SIGNIN_FORM_FIELDS } from '@/features/auth/model/constants'
+import AuthLayout from '../auth-layout'
+import AuthToggleLink from '../auth-toggle-link'
+import AuthButton from '../auth-button'
 import styles from './styles.module.css'
 
 export default function SignInForm() {
@@ -27,88 +30,48 @@ export default function SignInForm() {
     reset()
   }
 
+  const handleNavigateToSignup = () => {
+    console.log('Navigate to signup')
+  }
+
   return (
-    <div className={styles['login-container']}>
-      <div className={styles['login-card']}>
-        <div className={styles['logo-section']}>
-          <h1 className={styles['logo']}>Crypto Exchange</h1>
-          <p className={styles['subtitle']}>Welcome back</p>
+    <AuthLayout subtitle="Welcome back" title="Crypto Exchange">
+      <Form.Root
+        className={styles['login-form']}
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        {SIGNIN_FORM_FIELDS.map(field => (
+          <Input
+            key={field.name}
+            {...register(field.name)}
+            error={errors[field.name]?.message}
+            label={field.label}
+            placeholder={field.placeholder}
+            type={field.type}
+          />
+        ))}
+
+        <div className={styles['form-options']}>
+          <FormField error={errors.rememberMe?.message} name="rememberMe">
+            <Checkbox {...register('rememberMe')} label="Remember me" />
+          </FormField>
+          <Button className={styles['forgot-link']} type="button">
+            Forgot password?
+          </Button>
         </div>
 
-        <Form.Root
-          className={styles['login-form']}
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <Form.Field className={styles['input-group']} name="email">
-            <Form.Label className={styles['input-label']}>Email</Form.Label>
-            <Form.Control asChild>
-              <input
-                {...register('email')}
-                className={styles['input-field']}
-                placeholder="Enter your email"
-                type="email"
-              />
-            </Form.Control>
-            {errors.email && (
-              <Form.Message className={styles['error-message']}>
-                {errors.email.message}
-              </Form.Message>
-            )}
-          </Form.Field>
+        <Form.Submit asChild>
+          <AuthButton disabled={isSubmitting}>
+            {isSubmitting ? 'Signing in...' : 'Sign In'}
+          </AuthButton>
+        </Form.Submit>
+      </Form.Root>
 
-          <Form.Field className={styles['input-group']} name="password">
-            <Form.Label className={styles['input-label']}>Password</Form.Label>
-            <Form.Control asChild>
-              <input
-                {...register('password')}
-                className={styles['input-field']}
-                placeholder="Enter your password"
-                type="password"
-              />
-            </Form.Control>
-            {errors.password && (
-              <Form.Message className={styles['error-message']}>
-                {errors.password.message}
-              </Form.Message>
-            )}
-          </Form.Field>
-
-          <div className={styles['form-options']}>
-            <div className={styles['checkbox-label']}>
-              <Checkbox
-                className={styles['checkbox']}
-                id="remember"
-                {...register('rememberMe')}
-              >
-                <CheckboxIndicator className={styles['checkbox-indicator']}>
-                  <Icon name="checkmark" size={12} />
-                </CheckboxIndicator>
-              </Checkbox>
-              <Label className={styles['checkbox-text']} htmlFor="remember">
-                Remember me
-              </Label>
-            </div>
-            <button className={styles['forgot-link']} type="button">
-              Forgot password?
-            </button>
-          </div>
-
-          <Form.Submit asChild>
-            <button className={styles['login-button']} disabled={isSubmitting}>
-              {isSubmitting ? 'Signing in...' : 'Sign In'}
-            </button>
-          </Form.Submit>
-        </Form.Root>
-
-        <div className={styles['signup-section']}>
-          <p className={styles['signup-text']}>
-            Don't have an account?
-            <button className={styles['signup-link']} type="button">
-              Sign up
-            </button>
-          </p>
-        </div>
-      </div>
-    </div>
+      <AuthToggleLink
+        linkText="Sign up"
+        text="Don't have an account?"
+        onClick={handleNavigateToSignup}
+      />
+    </AuthLayout>
   )
 }
