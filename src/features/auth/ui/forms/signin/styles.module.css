@@ -21,8 +21,8 @@
 .checkbox {
   width: 16px;
   height: 16px;
-  background: #2a2a2a;
-  border: 1px solid #3a3a3a;
+  background: var(--color-background-input);
+  border: 1px solid var(--color-border-secondary);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -32,32 +32,32 @@
 }
 
 .checkbox:hover {
-  border-color: #06f;
+  border-color: var(--color-primary);
 }
 
 .checkbox[data-state="checked"] {
-  background: #06f;
-  border-color: #06f;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .checkbox-indicator {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--color-text-primary);
   font-size: 12px;
   font-weight: bold;
 }
 
 .checkbox-text {
-  color: #888;
+  color: var(--color-text-secondary);
   font-size: 14px;
 }
 
 .forgot-link {
   background: none;
   border: none;
-  color: #06f;
+  color: var(--color-primary);
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -67,15 +67,19 @@
 }
 
 .forgot-link:hover {
-  color: #38f;
+  color: var(--color-primary-light);
 }
 
 .login-button {
-  background: linear-gradient(135deg, #06f 0%, #38f 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 100%
+  );
   border: none;
   border-radius: 8px;
   padding: 16px;
-  color: #fff;
+  color: var(--color-text-primary);
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -85,20 +89,24 @@
 }
 
 .login-button:hover {
-  background: linear-gradient(135deg, #05d 0%, #27d 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-hover) 0%,
+    var(--color-primary) 100%
+  );
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgb(0 102 255 / 30%);
+  box-shadow: var(--shadow-button);
 }
 
 .signup-section {
   text-align: center;
   margin-top: 24px;
   padding-top: 24px;
-  border-top: 1px solid #2a2a2a;
+  border-top: 1px solid var(--color-border-primary);
 }
 
 .signup-text {
-  color: #888;
+  color: var(--color-text-secondary);
   font-size: 14px;
   margin: 0;
 }
@@ -106,7 +114,7 @@
 .signup-link {
   background: none;
   border: none;
-  color: #06f;
+  color: var(--color-primary);
   font-weight: 500;
   cursor: pointer;
   transition: color 0.2s ease;
@@ -115,5 +123,5 @@
 }
 
 .signup-link:hover {
-  color: #38f;
+  color: var(--color-primary-light);
 }

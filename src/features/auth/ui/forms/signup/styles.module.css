@@ -20,12 +20,12 @@
   width: 16px;
   height: 16px;
   margin-top: 2px;
-  accent-color: #06f;
+  accent-color: var(--color-primary);
   flex-shrink: 0;
 }
 
 .checkbox-text {
-  color: #888;
+  color: var(--color-text-secondary);
   font-size: 14px;
   margin: 0;
 }
@@ -33,7 +33,7 @@
 .terms-link {
   background: none;
   border: none;
-  color: #06f;
+  color: var(--color-primary);
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -43,11 +43,11 @@
 }
 
 .terms-link:hover {
-  color: #38f;
+  color: var(--color-primary-light);
 }
 
 .error-message {
-  color: #ef4444;
+  color: var(--color-error);
   font-size: 12px;
   font-weight: 400;
   margin-top: 4px;

@@ -5,7 +5,7 @@
 }
 
 .error-message {
-  color: #ef4444;
+  color: var(--color-error);
   font-size: 12px;
   font-weight: 400;
   margin-top: 4px;

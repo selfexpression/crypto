@@ -3,18 +3,22 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-background-secondary) 0%,
+    var(--color-background-tertiary) 100%
+  );
   padding: 20px;
 }
 
 .auth-card {
-  background: #1a1a1a;
+  background: var(--color-background-card);
   border-radius: 16px;
   padding: 40px;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 20px 40px rgb(0 0 0 / 30%);
-  border: 1px solid #2a2a2a;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-primary);
 }
 
 .logo-section {
@@ -23,7 +27,7 @@
 }
 
 .logo {
-  color: #fff;
+  color: var(--color-text-primary);
   font-size: 28px;
   font-weight: 700;
   margin: 0 0 8px;
@@ -31,7 +35,7 @@
 }
 
 .subtitle {
-  color: #888;
+  color: var(--color-text-secondary);
   font-size: 16px;
   margin: 0;
   font-weight: 400;
