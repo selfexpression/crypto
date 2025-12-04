@@ -1,0 +1,27 @@
+.toggle-section {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border-primary);
+}
+
+.toggle-text {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  margin: 0;
+}
+
+.toggle-link {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 0;
+  margin-left: 4px;
+}
+
+.toggle-link:hover {
+  color: var(--color-primary-light);
+}

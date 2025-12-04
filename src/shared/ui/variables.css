@@ -1,0 +1,51 @@
+/* CSS Custom Properties для UI компонентов */
+
+/* Цветовая палитра */
+:root {
+  /* Основные цвета */
+  --color-primary: #06f;
+  --color-primary-hover: #05d;
+  --color-primary-light: #38f;
+
+  /* Фон */
+  --color-background-primary: #000;
+  --color-background-secondary: #0a0a0a;
+  --color-background-tertiary: #1a1a1a;
+  --color-background-card: #1a1a1a;
+  --color-background-input: #2a2a2a;
+  --color-background-input-hover: #3a3a3a;
+
+  /* Текст */
+  --color-text-primary: #fff;
+  --color-text-secondary: #888;
+  --color-text-muted: #666;
+
+  /* Границы */
+  --color-border-primary: #2a2a2a;
+  --color-border-secondary: #3a3a3a;
+  --color-border-focus: #06f;
+
+  /* Ошибки */
+  --color-error: #ef4444;
+
+  /* Тени */
+  --shadow-card: 0 20px 40px rgb(0 0 0 / 30%);
+  --shadow-button: 0 4px 12px rgb(0 102 255 / 30%);
+}
+
+/* Темная тема (по умолчанию) */
+[data-theme="dark"] {
+  --color-background-primary: #000;
+  --color-background-secondary: #0a0a0a;
+  --color-background-tertiary: #1a1a1a;
+}
+
+/* Светлая тема (опционально) */
+[data-theme="light"] {
+  --color-background-primary: #fff;
+  --color-background-secondary: #f8f9fa;
+  --color-background-tertiary: #e9ecef;
+  --color-text-primary: #000;
+  --color-text-secondary: #666;
+  --color-text-muted: #999;
+}
